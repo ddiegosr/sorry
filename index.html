@@ -1,0 +1,154 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desculpas para o meu amor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        button {
+            cursor: pointer;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .centerize {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const welcome = document.querySelector(".welcome");
+            const sorry = document.querySelector(".sorry");
+            const why = document.querySelector(".why");
+            const gift = document.querySelector(".gift");
+
+            const hide = (element) => {
+                element.classList.add("hide")
+            }
+
+            const show = (element) => {
+                element.classList.remove("hide")
+            }
+
+            [sorry, why, gift].forEach((element) => {
+                hide(element)
+            })
+
+            const welcomeButtons = document.querySelectorAll(".welcome button")
+            welcomeButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    hide(welcome)
+                    show(sorry)
+                })
+            })
+
+            const [sorryYes, sorryNo] = document.querySelectorAll(".sorry button")
+            sorryYes.addEventListener("click", () => {
+                hide(sorry)
+                show(gift)
+            })
+            sorryNo.addEventListener("click", () => {
+                hide(sorry)
+                show(why)
+            })
+
+            const whyButtons = document.querySelectorAll(".why button")
+            whyButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    hide(why)
+                    show(gift)
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="columns is-centered">
+        <div class="column is-half has-text-centered centerize">
+            <div class="welcome">
+                <h1 class="title">Olá amor da minha life ❤️</h1>
+                <h3 class="title is-4">Você sabe que eu te amo né?</h3>
+                <div class="columns is-centered">
+                    <image class="image is-centered" width="256" src="./love.gif"></image>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <button class="button is-danger">Sim</button>
+                    </div>
+                    <div class="column">
+                        <button class="button is-danger blink">COM CERTEZA!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="sorry">
+                <h4 class="title is-4">Sabendo dessa informação. Você me perdoa?</h4>
+                <h5 class="title is-5">Essa não é muito a area do mozão, desculpa de novo😪</h5>
+                <div class="columns is-centered">
+                    <image class="image is-centered" width="256" src="./please.gif"></image>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <button class="button is-danger">Sim 😍</button>
+                    </div>
+                    <div class="column">
+                        <button class="button is-danger is-light">Não 😠</button>
+                    </div>
+                </div>
+            </div>
+            <div class="why">
+                <h4 class="title is-4">Porqueeeeee? 😭</h4>
+                <div class="columns is-centered">
+                    <image class="image is-centered" width="256" src="./sad.gif"></image>
+                </div>
+                <h5 class="subtitle is-5">Eu compro uns quitutes(fitnesses) exclusivos pra você😌</h5>
+                <h5 class="subtitle is-5">Com <s>coquinha</s> suco</h5>
+                <h5 class="subtitle is-5">E muitos abraços</h5>
+                <h5 class="subtitle is-5">E muitos beijos</h5>
+                <h5 class="subtitle is-5">E tudo que há de melhor para a melhor😌</h5>
+                <h5 class="title is-5">Então, o que me diz?👀</h5>
+                <div class="columns is-centered">
+                    <image class="image is-centered" width="256" src="./hug.gif"></image>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <button class="button is-danger">QUERO</button>
+                    </div>
+                    <div class="column">
+                        <button class="button is-danger blink">QUERO MUITO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="gift">
+                <h4 class="title is-4">Você acaba de desculpar o mozão e ganhou:</h4>
+                <div class="columns is-centered">
+                    <image class="image is-centered" width="256" src="./happy.gif"></image>
+                </div>
+                <h5 class="subtitle is-5">Quitutes(fitnesses) exclusivos pra você😌</h5>
+                <h5 class="subtitle is-5"><s>coquinha</s> suco</h5>
+                <h5 class="subtitle is-5">Muitos abraços</h5>
+                <h5 class="subtitle is-5">Muitos beijos</h5>
+                <h5 class="subtitle is-5">Tudo que há de melhor para a melhor😌</h5>
+                <a class="button is-success blink" href="https://wa.me/5585999044447?message=Quero%20meu%20premio%F0%9F%98%8C">Pegar meu prêmio</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
